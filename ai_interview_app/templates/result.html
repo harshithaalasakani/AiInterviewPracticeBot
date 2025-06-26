@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interview Result</title>
+  <style>
+    body { text-align: center; background: #f0f8ff; padding: 50px; font-family: Arial; }
+    h1 { font-size: 48px; color: #2c3e50; }
+    .score { font-size: 60px; margin: 20px 0; color: green; }
+    .section { margin: 20px 0; }
+    ul { list-style: none; padding: 0; }
+  </style>
+</head>
+<body>
+  <h1>Your Interview Summary</h1>
+  <div class="score" id="finalScore">0 / 100</div>
+
+  <div class="section">
+    <h3>🌟 What's Good in You</h3>
+    <ul id="positives"></ul>
+  </div>
+
+  <div class="section">
+    <h3>🔧 What You Can Improve</h3>
+    <ul id="improvements"></ul>
+  </div>
+
+  <div class="section">
+    <h3>💡 Final Tip</h3>
+    <p id="finalTip"></p>
+  </div>
+</body>
+
+<script>
+  const data = JSON.parse(localStorage.getItem("interview_result"));
+
+  document.getElementById("finalScore").textContent = `${data.avg_score} / 100`;
+
+  const pos = document.getElementById("positives");
+  data.positives.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    pos.appendChild(li);
+  });
+
+  const imp = document.getElementById("improvements");
+  data.improvements.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    imp.appendChild(li);
+  });
+
+  document.getElementById("finalTip").textContent = data.final_tip;
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Interviewer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 AI Interview Practice</h1>
+
+    <div class="question-box">
+      <p><strong>Question:</strong></p>
+      <p><strong>Select Role:</strong>
+  <select id="roleInput">
+    <option value="Frontend Developer">Frontend Developer</option>
+    <option value="Backend Developer">Backend Developer</option>
+    <option value="Data Scientist">Data Scientist</option>
+    <option value="Cloud Engineer">Cloud Engineer</option>
+    <option value="Full Stack Developer">Full Stack Developer</option>
+  </select>
+</p>
+
+    <p><strong>Question:</strong> <span id="question">Click below to generate</span></p>
+
+      <button onclick="fetchQuestion()">Generate AI Question</button>
+
+      <p><strong>Time:</strong> <span id="timer">00:00</span></p>
+    </div>
+
+    <textarea id="answer" placeholder="Type your answer or use the mic..."></textarea><br>
+
+    <div class="buttons">
+      <button onclick="submitAnswer()">Submit</button>
+      <button onclick="startRecording()">Start Speaking 🎙️</button>
+      <button onclick="stopRecording()">Stop Speaking 🛑</button>
+      <button onclick="nextQuestion()">Next Question ➡️</button>
+    </div>
+
+    <div id="feedback"></div>
+    <div id="history" style="margin-top: 20px;">
+  <h3>Previous Q&A</h3>
+  <ul id="historyList"></ul>
+</div>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
