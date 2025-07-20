@@ -1,7 +1,7 @@
 # AiInterviewPractice
 🧠 AI Interview Practice Web App
 
-This project is an AI-powered interview simulator built using **Flask**, **JavaScript**, **HTML/CSS**, and **TextBlob** + **Gemini API**.
+This project is an AI-powered Automation interview simulator built using **Flask**, **JavaScript**, **HTML/CSS**, and **TextBlob** + **Gemini API**.
 
 🔥 Features
 
